@@ -226,12 +226,16 @@ public class Series1 {
 
 	public static long addingThreeNumbers(long number1, long number2, long number3) {
 		//13
-		return -2;
+		return number1 + number2 + number3;
 	}
 
 	public static long addingSeveralNumbers(final Integer... numbers) {
 		//14
-		return -1;
+		long result = 0;
+		for(int i = 0; i < numbers.length; i++){
+			result += numbers[i];
+		}
+		return result;
 	}
 
 	public static float makeNegative(float number) {
