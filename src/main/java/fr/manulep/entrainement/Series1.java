@@ -9,18 +9,51 @@ public class Series1 {
 
 	public static String helloWorld(String name) {
 		//1
-		return null;
+		if (name == null || name == "") {
+			return("Hello World");
+		} else {
+			return("Hello " + name);
+		}
 	}
 	
 
 	public static String[] removeNullElements(String[] array) {
 		//2
-		return null;
+		int compt = 0;
+		int j = 0;
+		for (int i = 0; i < array.length; i++){
+			if (array[i] != null) {
+				compt++;
+			}
+		}
+		String[] arrayClean = new String[compt];
+		for (int i = 0; i < array.length; i++){
+			if (array[i] != null){
+				arrayClean[j] = array[i];
+				j++;
+			}
+		}
+		return arrayClean;
 	}
 
 	public static int[] addElementToBeginning(int[] array, int element) {
 		//3
-		return null;
+		int[] newArray;
+		if (array.length > 0) {
+			newArray = new int[array.length + 1];
+		}
+		else{
+			newArray = new int[1];
+		}
+		for (int i = 0; i < newArray.length; i++){
+			if (i == 0) {
+				newArray[i] = element;
+			}
+			else{
+				newArray[i] = array[i - 1];
+			}
+		}
+		return newArray;
 	}
 	
 	public static int[] allElementsExceptFirstThree(int[] array) {
