@@ -221,7 +221,7 @@ public class Series1 {
 	
 	public static long addingTwoNumbers(long number1, long number2) {
 		//12
-		return -1;
+		return number1 + number2;
 	}
 
 	public static long addingThreeNumbers(long number1, long number2, long number3) {
