@@ -107,9 +107,68 @@ public class Series1 {
 	
 	public static String[] selectElementsStartingWithVowel(String[]array) {
 		//7
-		return null;
+		String[] newArray = {};
+	int compt = 0;
+	int j = 0;
+	for (int i = 0; i < array.length; i++){
+		if (array[i] != null){
+			switch (array[i].charAt(0)){
+				case 'a':
+					compt++;
+				break;
+				case 'e':
+					compt++;
+				break;
+				case 'i':
+					compt++;
+				break;
+				case 'o':
+					compt++;
+				break;
+				case 'u':
+					compt++;
+				break;
+				case 'y':
+					compt++;
+				break;
+			}
+		}
 	}
-	
+	if (compt > 0) {
+		newArray = new String[compt];
+		for(int i = 0; i < array.length; i++){
+			if (array[i] != null){
+				switch (array[i].charAt(0)){
+					case 'a':
+						newArray[j] = array[i];
+						j++;
+					break;
+					case 'e':
+						newArray[j] = array[i];
+						j++;
+					break;
+					case 'i':
+						newArray[j] = array[i];
+						j++;
+					break;
+					case 'o':
+						newArray[j] = array[i];
+						j++;
+					break;
+					case 'u':
+						newArray[j] = array[i];
+						j++;
+					break;
+					case 'y':
+						newArray[j] = array[i];
+						j++;
+					break;
+				}
+			}
+		}
+	}
+	return newArray;
+}
 	public static String[] reverseOrderInArray(String[]array) {
 		//8
 		return null;
