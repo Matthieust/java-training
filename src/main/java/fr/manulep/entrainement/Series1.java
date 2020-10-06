@@ -210,7 +210,13 @@ public class Series1 {
 
 	public static String removeCapitals(String text) {
 		//11
-		return null;
+		String newText = "";
+		for (int i = 0; i < text.length(); i++){
+			if (!Character.isUpperCase(text.charAt(i))){
+				newText += text.charAt(i);
+			}
+		}
+		return newText;
 	}
 	
 	public static long addingTwoNumbers(long number1, long number2) {
