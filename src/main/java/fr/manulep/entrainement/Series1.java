@@ -198,7 +198,14 @@ public class Series1 {
 
 	public static String shortestWord(String text) {
 		//10
-		return null;
+		String[] shortest = text.split(" ");
+		String tmp = shortest[0];
+		for(int i = 0; i < shortest.length; i++){
+			if (tmp.length() > shortest[i].length()){
+				tmp = shortest[i];
+			}
+		}
+		return tmp;
 	}
 
 	public static String removeCapitals(String text) {
