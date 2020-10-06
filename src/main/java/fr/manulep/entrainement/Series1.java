@@ -73,7 +73,14 @@ public class Series1 {
 	
 	public static String getFirstHalf(String word) {
 		//5
-		return null;
+		String newWord;
+		if (word.length()%2 != 0){
+			newWord = word.substring(0,word.length()/2 + 1);
+		}
+		else {
+			newWord = word.substring(0,word.length()/2);
+		}
+		return newWord;
 	}
 	
 	public static String[] selectElementsStartingWithA(String[] array) {
