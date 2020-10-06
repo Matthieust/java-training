@@ -182,7 +182,18 @@ public class Series1 {
 
 	public static int[] insertElementInTheMiddleOfAnArray(int[] array, int element) {
 		//9
-		return null;
+		int[] newArray = new int[array.length + 1];
+		int j = 0;
+		for (int i = 0; i < newArray.length; i++){
+			if (i == array.length / 2){
+				newArray[i] = element;
+			}
+			else {
+				newArray[i] = array[j];
+				j++;
+			}
+		}
+		return newArray;
 	}
 
 	public static String shortestWord(String text) {
