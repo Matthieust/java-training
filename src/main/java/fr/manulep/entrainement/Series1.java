@@ -171,7 +171,13 @@ public class Series1 {
 }
 	public static String[] reverseOrderInArray(String[]array) {
 		//8
-		return null;
+		String[] newArray = new String[array.length];
+		int j = array.length - 1;
+		for (int i = 0; i < array.length; i++){
+			newArray[j] = array[i];
+			j--;
+		}
+		return newArray;
 	}
 
 	public static int[] insertElementInTheMiddleOfAnArray(int[] array, int element) {
