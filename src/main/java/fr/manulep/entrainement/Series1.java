@@ -58,7 +58,17 @@ public class Series1 {
 	
 	public static int[] allElementsExceptFirstThree(int[] array) {
 		//4
-		return null;
+		int[] newArray = {};
+		if (array.length < 3){
+			return newArray;
+		}
+		else{
+			newArray = new int[array.length - 3];
+			for (int i = 3; i < array.length; i++){
+				newArray[i - 3] = array[i];
+			}
+		}
+		return newArray;
 	}
 	
 	public static String getFirstHalf(String word) {
