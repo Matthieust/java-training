@@ -240,7 +240,10 @@ public class Series1 {
 
 	public static float makeNegative(float number) {
 		//15
-		return 0;
+		if (number > 0){
+			number *= -1;
+		}
+		return number;
 	}
 
 	public static boolean checkForSpecialCharacters(String string) {
