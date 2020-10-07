@@ -1,5 +1,7 @@
 package fr.manulep.entrainement;
 
+import javax.crypto.spec.IvParameterSpec;
+
 public class Series1 {
 	
 	private Series1() {
@@ -266,7 +268,11 @@ public class Series1 {
 
 	public static String getDomainName(String email) {
 		//18
-		return null;
+		int i = 0;
+		while (email.charAt(i) != '@') {
+			i++;
+		}
+		return email.substring(i + 1, email.length() -  4);
 	}
 
 	public static int[] letterPosition(String name) {
