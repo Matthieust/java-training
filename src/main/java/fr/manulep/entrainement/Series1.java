@@ -285,7 +285,9 @@ public class Series1 {
 	}
 
 	public static boolean isPeer(int number) {
-		//20
+		if (number % 2 == 0){
+			return true;
+		}
 		return false;
 	}
 
