@@ -257,7 +257,11 @@ public class Series1 {
 
 	public static boolean checkIfStringStartsWithConsonant( String word ) {
 		//17
-		return false;
+		char charToComp = Character.toLowerCase(word.charAt(0));
+		if (charToComp == 'a' || charToComp == 'e' || charToComp == 'i' || charToComp == 'o' || charToComp == 'u' || charToComp == 'y'){
+				return false;
+		}
+		return true;
 	}
 
 	public static String getDomainName(String email) {
