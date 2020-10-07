@@ -277,7 +277,11 @@ public class Series1 {
 
 	public static int[] letterPosition(String name) {
 		//19
-		return null;
+		int[] array = new int[name.length()];
+		for (int i = 0; i < name.length(); i++) {
+			array[i] =  (int) Character.toLowerCase(name.charAt(i)) - 96;
+		}
+		return array;
 	}
 
 	public static boolean isPeer(int number) {
