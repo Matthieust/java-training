@@ -248,6 +248,10 @@ public class Series1 {
 
 	public static boolean checkForSpecialCharacters(String string) {
 		//16
+		for (int i = 0; i < string.length(); i++) {
+			if (Character.isLetter(string.charAt(i)) == false && string.charAt(i) != '!')
+				return true;
+		}
 		return false;
 	}
 
