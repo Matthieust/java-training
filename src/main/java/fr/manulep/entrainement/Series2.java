@@ -131,7 +131,14 @@ public class Series2 {
 	}
 
 	public static List<Integer> allElementsExceptFirstAndLast(List<Integer> elements) {
-		return new ArrayList<>();
+		List<Integer> result = new ArrayList<Integer>();
+
+		if (elements.size() > 2) {
+			for (int i = 1; i < elements.size() - 1; i++) {
+				result.add(elements.get(i));
+			}
+		}
+		return result;
 	}
 	
 	public static List<Integer> reverseOrder(List<Integer> elements) {
