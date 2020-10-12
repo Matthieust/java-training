@@ -88,7 +88,20 @@ public class Series2 {
 	}
 
 	public static List<String> getElementsLowerThanNumber(List<String> elements, int maxi) {
-		return new ArrayList<>();
+		List<String> result = new ArrayList<String> ();
+
+		for (int i = 0; i < elements.size(); i++) {
+			if (Integer.parseInt(elements.get(i)) < maxi) {
+				result.add(elements.get(i));
+			}
+		}
+		java.util.Collections.sort(result);
+		for (int i = 0; i < result.size() - 1; i++) {
+			if (Integer.parseInt(result.get(i)) == Integer.parseInt(result.get(i + 1))) {
+				result.remove(i);
+			}
+		}
+		return result;
 	}
 
 	public static List<Integer> exportPeerElements(List<Integer> elements) {
