@@ -142,7 +142,11 @@ public class Series2 {
 	}
 	
 	public static List<Integer> reverseOrder(List<Integer> elements) {
-		return new ArrayList<>();
+		List<Integer> result = new ArrayList<Integer>();
+		for (int i = elements.size() - 1; i >= 0; i--) {
+			result.add(elements.get(i));
+		}
+		return result;
 	}
 
 	public static List<Integer> swapFirstandLastElement(List<Integer> elements) {
