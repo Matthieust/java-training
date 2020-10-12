@@ -245,7 +245,31 @@ public class Series2 {
 	}
 
 	public static String titleize(String title) {
-		return null;
+		String[] array = title.split(" ");
+		List<String> array_title = new ArrayList<>();
+		StringBuilder sb = new StringBuilder();
+
+		for (int i = 0; i < array.length; i++) {
+			if (i == 0) {
+				array_title.add(array[i].substring(0, 1).toUpperCase() + array[i].substring(1));
+			}
+			else if (!array[i].equals("and") && !array[i].equals("the")){
+				array_title.add(array[i].substring(0, 1).toUpperCase() + array[i].substring(1));
+			}
+			else if (array[i - 1].charAt(array[i - 1].length()-1) == '.'){
+				array_title.add(array[i].substring(0, 1).toUpperCase() + array[i].substring(1));
+			}
+			else {
+				array_title.add(array[i]);
+			}
+		}
+		for (int i = 0; i < array_title.size(); i++) {
+			sb.append(array_title.get(i));
+			if (i != array_title.size() - 1) {
+				sb.append(" ");
+			}
+		}
+		return sb.toString();
 	}
 
 	public static List<String> findAnagrams(String name) {
