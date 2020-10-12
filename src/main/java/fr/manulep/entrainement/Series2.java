@@ -2,6 +2,7 @@ package fr.manulep.entrainement;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Series2 {
@@ -22,7 +23,17 @@ public class Series2 {
 	}
 
 	public static List<String> sortByLastLetter(List<String> names) {
-		return new ArrayList<>();
+		List<String> al = new ArrayList<String>();
+		
+		for (int i = 0; i < names.size(); i++) {
+			al.add(names.get(i));
+		}
+		java.util.Collections.sort(al, (s1, s2) -> {
+			String sb1 = s1.substring(s1.length() - 1);
+			String sb2 = s2.substring(s2.length() - 1);
+			return sb1.compareTo(sb2);
+			});
+		return al;
 	}
 	
 	public static String exportWordsWithoutALetter(List<String> names, char letter) {
