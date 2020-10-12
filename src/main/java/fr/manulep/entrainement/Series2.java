@@ -64,7 +64,27 @@ public class Series2 {
 	}
 	
 	public static String getAllLetters(List<String> words) {
-		return "";
+		List<Character> result = new ArrayList<Character>();
+		String resString = "";
+		boolean flag = false;
+
+		for (int i = 0; i < words.size(); i++) {
+			for (int j = 0; j < words.get(i).length(); j++) {
+				for (int k = 0; k < result.size(); k++) {
+					if (result.get(0) == words.get(i).charAt(j)){
+						flag = true;
+					}
+				}
+				if (flag == false) {
+					result.add(words.get(i).charAt(j));
+				}
+			}
+		}
+		java.util.Collections.sort(result);
+		for (int i = 0; i < result.size(); i++){
+			resString += result.get(i);
+		}
+		return resString;
 	}
 
 	public static List<String> getElementsLowerThanNumber(List<String> elements, int maxi) {
