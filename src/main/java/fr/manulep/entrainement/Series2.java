@@ -115,7 +115,19 @@ public class Series2 {
 	}
 
 	public static List<Integer> exportSortPeerElements(List<Integer> elements) {
-		return new ArrayList<>();
+		List<Integer> result = new ArrayList<Integer>();
+		for (int i = 0; i< elements.size(); i++) {
+			if (elements.get(i) % 2 == 0) {
+				result.add(elements.get(i));
+			}
+		}
+		java.util.Collections.sort(result);
+		for (int i = 0; i < result.size() - 1; i++) {
+			if (result.get(i) == result.get(i + 1)) {
+				result.remove(i);
+			}
+		}
+		return result;
 	}
 
 	public static List<Integer> allElementsExceptFirstAndLast(List<Integer> elements) {
