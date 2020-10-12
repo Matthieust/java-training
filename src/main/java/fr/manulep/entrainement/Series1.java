@@ -1,7 +1,5 @@
 package fr.manulep.entrainement;
 
-import javax.crypto.spec.IvParameterSpec;
-
 public class Series1 {
 	
 	private Series1() {

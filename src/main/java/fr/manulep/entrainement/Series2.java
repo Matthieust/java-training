@@ -11,7 +11,14 @@ public class Series2 {
 	}
 
 	public static List<String> selectElementsFromListStartingWithA(List<String> elements) {
-		return new ArrayList<>();
+		List<String> newlist = new ArrayList<String>();
+	
+		for (int i = 0; i < elements.size(); i++){
+			if (elements.get(i).charAt(0) == 'a'){
+				newlist.add(elements.get(i));
+			}
+		}
+		return newlist;
 	}
 
 	public static List<String> sortByLastLetter(List<String> names) {
