@@ -105,7 +105,13 @@ public class Series2 {
 	}
 
 	public static List<Integer> exportPeerElements(List<Integer> elements) {
-		return new ArrayList<>();
+		List<Integer> result = new ArrayList<Integer>();
+		for (int i = 0; i< elements.size(); i++) {
+			if (elements.get(i) % 2 == 0) {
+				result.add(elements.get(i));
+			}
+		}
+		return result;
 	}
 
 	public static List<Integer> exportSortPeerElements(List<Integer> elements) {
