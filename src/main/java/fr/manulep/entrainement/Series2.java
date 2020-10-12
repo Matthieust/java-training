@@ -175,7 +175,48 @@ public class Series2 {
 	}
 
 	public static int numberOfPalindromeWord(String text) {
-		return 0;
+		String[] array = text.split(",");
+		List<String> array_parsed = new ArrayList<String>();
+		int flag = 0;
+		int start = 0;
+		int end = 0;
+		int count = 0;
+
+		for (String t : array) {
+			flag = 0;
+			start = 0;
+			end = 0;
+			if (t.length() > 1) {
+				for (int i = 0; i < t.length(); i++) {
+					if (t.charAt(i) == '\'' && flag == 0) {
+						flag = 1;
+						start = i;
+					}
+					else if (t.charAt(i) == '\'' && (i == t.length()- 1 || !Character.isLetter(t.charAt(i + 1))) && flag == 1) {
+						flag = 0;
+						end = i;
+					}
+				}
+				array_parsed.add(t.substring(start + 1, end));
+				flag = 0;
+				start = 0;
+				end = 0;
+			}
+		}
+		if (array_parsed.size() < 2){
+			count++;
+		}
+		else {
+			for (int i  = 0; i < array_parsed.size(); i++) {
+				for (int j = 0; j < array_parsed.get(i).length(); j++) {
+					if (j == array_parsed.get(i).length() / 2){
+						count++;
+					}
+				}
+			}
+		}
+
+		return count;
 	}
 
 	public static String longestWord(String text) {
