@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.print.attribute.standard.ReferenceUriSchemesSupported;
+
 public class Series2 {
 	
 	private Series2() {
@@ -150,7 +152,26 @@ public class Series2 {
 	}
 
 	public static List<Integer> swapFirstandLastElement(List<Integer> elements) {
-		return new ArrayList<>();
+		List<Integer> result = new ArrayList<Integer>();
+		int temp;
+		if (elements.size() > 1) {
+			temp = elements.get(0);
+			for (int i = 0; i < elements.size(); i++) {
+				if (i == 0) {
+					result.add(elements.get(elements.size() - 1));
+				}
+				else if (i == elements.size() - 1) {
+					result.add(temp);
+				}
+				else {
+					result.add(elements.get(i));
+				}
+			}
+		}
+		else {
+			return elements;
+		}
+		return result;
 	}
 
 	public static int numberOfPalindromeWord(String text) {
