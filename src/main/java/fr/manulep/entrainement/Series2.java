@@ -181,6 +181,7 @@ public class Series2 {
 		int start = 0;
 		int end = 0;
 		int count = 0;
+		int j = 0;
 
 		for (String t : array) {
 			flag = 0;
@@ -197,30 +198,46 @@ public class Series2 {
 						end = i;
 					}
 				}
-				array_parsed.add(t.substring(start + 1, end));
+				array_parsed.add(t.substring(start + 1, end).toLowerCase().replaceAll(" ", "").replaceAll("\\?", ""));
 				flag = 0;
 				start = 0;
 				end = 0;
 			}
 		}
-		if (array_parsed.size() < 2){
-			count++;
-		}
-		else {
-			for (int i  = 0; i < array_parsed.size(); i++) {
-				for (int j = 0; j < array_parsed.get(i).length(); j++) {
+		for (int i  = 0; i < array_parsed.size(); i++) {
+			j = 0;
+			if (array_parsed.get(i).length() < 2){
+				count++;
+			}
+			else {
+				while (array_parsed.get(i).charAt(j) == array_parsed.get(i).charAt(array_parsed.get(i).length() - 1 - j) && j <= array_parsed.get(i).length() / 2) {
 					if (j == array_parsed.get(i).length() / 2){
 						count++;
 					}
+					j++;
 				}
 			}
+			
 		}
-
 		return count;
 	}
 
 	public static String longestWord(String text) {
-		return null;
+		String[] array = text.split(" ");
+		List<String> array_clean = new ArrayList<>();
+		int	max = 0;
+		int	mark = 0;
+
+		for (String t : array){
+			array_clean.add(t.replaceAll("[,.]", ""));
+		}
+		for (int i = 0; i < array_clean.size(); i++){
+			if (array_clean.get(i).length() > max) {
+				max = array_clean.get(i).length();
+				mark = i;
+			}
+		}
+		return array_clean.get(mark);
 	}
 
 	public static String getAllLetters(String[] array) {
