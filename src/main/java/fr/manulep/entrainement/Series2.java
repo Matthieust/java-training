@@ -37,7 +37,30 @@ public class Series2 {
 	}
 	
 	public static String exportWordsWithoutALetter(List<String> names, char letter) {
-		return "";
+		String result = "";
+		int flag = 0;
+
+		if (names.size() > 0 && names.get(0).length() > 0) {
+			for (int i = 0; i < names.size(); i++){
+				if (names.get(i) != null) {
+					flag = 0;
+					for (int j = 0; j < names.get(i).length(); j++){
+						if (names.get(i).toLowerCase().charAt(j) == letter) {
+							flag = 1;
+						}
+						if (flag == 0 && j == names.get(i).length() - 1) {
+							if (result == "") {
+								result += names.get(i);
+							}
+							else {
+								result += ", " + names.get(i);
+							}
+						}
+					}
+				}
+			}
+		}
+		return result;
 	}
 	
 	public static String getAllLetters(List<String> words) {
