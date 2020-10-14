@@ -275,7 +275,7 @@ public class Series2 {
 	}
 
 	public static int roundUp(float number) {
-		return 0;
+		return (int)Math.round(number);
 	}
 
 	public static int findLastDayOfMonth(int month, int year) {
@@ -283,11 +283,18 @@ public class Series2 {
 	}
 
 	public static int factorial(int number) {
-		return 0;
+		int result = 1;
+
+		for (int i = number; i > 0; i--) {
+			result *= i;
+		}
+		return result;
 	}
 
 	public static int convertToCelsius(int temperature) {
-		return 0;
+		double result = ((double)temperature - 32) * 5/9;
+		result = Math.round(result);
+		return (int)result;
 	}
 
 	public static boolean isPeerSum(final int... numbers) {
