@@ -2,6 +2,7 @@ package fr.manulep.entrainement;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -328,6 +329,28 @@ public class Series2 {
 	}
 
 	public static boolean isOrder(int... number) {
+		List<Integer> check = new ArrayList<>();
+		boolean order = true;
+		boolean reverse = true;
+
+		for (int n : number) {
+			check.add(n);
+		}
+		java.util.Collections.sort(check);
+		for (int i = 0; i < number.length; i++) {
+			if (check.get(i) != number[i]) {
+				order = false;
+			}
+		}
+		java.util.Collections.reverse(check);
+		for (int i = 0; i < number.length; i++) {
+			if (check.get(i) != number[i]) {
+				reverse = false;
+			}
+		}
+		if (order || reverse) {
+			return true;
+		}
 		return false;
 	}
 
