@@ -2,10 +2,8 @@ package fr.manulep.entrainement;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import javax.print.attribute.standard.ReferenceUriSchemesSupported;
 
 public class Series2 {
 	
@@ -293,10 +291,32 @@ public class Series2 {
 	}
 
 	public static boolean isPeerSum(final int... numbers) {
+		int res = 0;
+		for (int i = 0; i < numbers.length; i++){
+			res += numbers[i];
+		}
+		if (res % 2 == 0 ) {
+			return true;
+		}
 		return false;
 	}
 
 	public static boolean isRightTriangle(int side1, int side2, int side3) {
+		if (side1 > side2 && side1 > side3) {
+			if (Math.pow(side1, 2) == Math.pow(side2, 2) + Math.pow(side3, 2)) {
+				return true;
+			}
+		}
+		else if (side2 > side1 && side2 > side3) {
+			if (Math.pow(side2, 2) == Math.pow(side1, 2) + Math.pow(side3, 2)) {
+				return true;
+			}
+		}
+		else if (side3 > side2 && side3 > side1) {
+			if (Math.pow(side3, 2) == Math.pow(side2, 2) + Math.pow(side1, 2)) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -305,11 +325,11 @@ public class Series2 {
 	}
 
 	public static Float intToFloat(int number) {
-		return null;
+		return (float)number;
 	}
 
 	public static Integer floatToInt(float number) {
-		return null;
+		return (int)number;
 	}
 
 	public static String dateToString(LocalDate date, String format) {
