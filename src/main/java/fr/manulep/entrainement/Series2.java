@@ -280,7 +280,32 @@ public class Series2 {
 	}
 
 	public static int findLastDayOfMonth(int month, int year) {
-		return 0;
+		boolean leap = false;
+
+		System.out.println(year);
+		
+		if (year % 4 == 0) {
+			if (year % 100 == 0) {
+				if (year % 400 == 0) {
+					leap = true;
+				}
+			}
+			else {
+				leap = true;
+			}
+		}
+		if (month == 2 && leap) {
+			return 29;
+		}
+		else if (month == 2 && !leap ){
+			return 28;
+		}
+		else if (month == 4 || month == 6 || month == 9 || month ==11 ) {
+			return 30;
+		}
+		else {
+			return 31;
+		}
 	}
 
 	public static int factorial(int number) {
