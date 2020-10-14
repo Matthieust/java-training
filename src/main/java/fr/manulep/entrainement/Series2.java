@@ -387,8 +387,8 @@ public class Series2 {
 		return (int)number;
 	}
 
-	public static String dateToString(LocalDate date, String format) {
-		return null;
+	public static String dateToString(LocalDate date , String format) {
+		return	date.format(java.time.format.DateTimeFormatter.ofPattern(format.replaceAll("mm", "MM")));
 	}
 
 }
